@@ -1,6 +1,47 @@
-[gd_scene format=3 uid="uid://decguwfqdmhmp"]
+[gd_scene format=3 uid="uid://44db8fhsh1pt"]
 
 [ext_resource type="Script" uid="uid://xuujnwvbd007" path="res://start_scene.gd" id="1_mbe3m"]
 
-[node name="StartScene" type="Node2D" unique_id=415313687]
+[node name="StartScene" type="Node2D" unique_id=415313687 node_paths=PackedStringArray("start_button")]
 script = ExtResource("1_mbe3m")
+start_button = NodePath("CanvasLayer2/UI/StartButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513040311]
+process_mode = 3
+
+[node name="EndLabel" type="Label" parent="CanvasLayer" unique_id=303474271]
+process_mode = 3
+visible = false
+offset_left = 323.0
+offset_top = 197.0
+offset_right = 866.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=535507489]
+
+[node name="UI" type="Control" parent="CanvasLayer2" unique_id=1170731398]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="CanvasLayer2/UI" unique_id=1000282983]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 184.0
+offset_right = 909.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 100
+text = "Game Name"
+
+[node name="StartButton" type="Button" parent="CanvasLayer2/UI" unique_id=323331047]
+process_mode = 3
+layout_mode = 0
+offset_left = 426.0
+offset_top = 375.0
+offset_right = 788.0
+offset_bottom = 543.0
+theme_override_font_sizes/font_size = 80
+text = "START"
