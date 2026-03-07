@@ -20,7 +20,6 @@ p3_anchor = NodePath("../P3_Anchor")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1855285471]
 position = Vector2(5, 232)
-collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1848515765]
 scale = Vector2(6.4102874, 1.1567085)
