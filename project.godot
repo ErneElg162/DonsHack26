@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="DonsHack26"
-run/main_scene="uid://vtv3j7vlfal"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://odrfmgcftwqi"
 
 [input]
 
@@ -75,3 +78,4 @@ DEBUG={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.4612537, 0.6382392, 0.609036, 1)
