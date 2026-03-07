@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bclsqvycllnl3"]
+
+[ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://background3-1.png" id="1_cb8w2"]
+[ext_resource type="Script" uid="uid://r126fj7160hn" path="res://sceen_1.gd" id="1_n8nbn"]
+[ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="2_hm3ih"]
+[ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Trashcan.png" id="3_cb8w2"]
+[ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="4_46joo"]
+[ext_resource type="AudioStream" uid="uid://bhdrnobtigp7d" path="res://throwing trash sound.mp3" id="6_ckmo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuurp"]
+size = Vector2(1704, 573)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t6hc"]
+size = Vector2(3287.5, 538)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm3ih"]
+size = Vector2(1082, 624)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb8w2"]
+size = Vector2(24.5, 493.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46joo"]
+size = Vector2(24.5, 495.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8nbn"]
+size = Vector2(266.5, 295.25)
+
+[node name="Sceen1" type="Node2D" unique_id=709806057 node_paths=PackedStringArray("start_button")]
+script = ExtResource("1_n8nbn")
+start_button = NodePath("CanvasLayer/StartButton")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2035044339]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1598529744]
+position = Vector2(-68, 276.5)
+shape = SubResource("RectangleShape2D_nuurp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1638530434]
+position = Vector2(2517.75, 253)
+shape = SubResource("RectangleShape2D_5t6hc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1776222860]
+position = Vector2(1868, -330)
+shape = SubResource("RectangleShape2D_hm3ih")
+
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D" unique_id=1913792183]
+offset_left = -921.0
+offset_top = -372.0
+offset_right = 783.0
+offset_bottom = 568.0
+texture = ExtResource("1_cb8w2")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="StaticBody2D" unique_id=1173480985]
+offset_left = 878.0
+offset_top = -373.0
+offset_right = 4167.0
+offset_bottom = 563.0
+texture = ExtResource("1_cb8w2")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="StaticBody2D" unique_id=1207599260]
+offset_left = 1324.0
+offset_top = -1007.0
+offset_right = 2412.0
+offset_bottom = -16.0
+texture = ExtResource("1_cb8w2")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RigidBody2D" parent="." unique_id=1940723546 instance=ExtResource("2_hm3ih")]
+position = Vector2(3472, -651)
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D" unique_id=1611953558]
+
+[node name="Trashcan" type="StaticBody2D" parent="." unique_id=2032885324]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trashcan" unique_id=398228661]
+position = Vector2(3309, -251)
+shape = SubResource("RectangleShape2D_cb8w2")
+
+[node name="TextureRect" type="TextureRect" parent="Trashcan" unique_id=1534099604]
+offset_left = 3266.0
+offset_top = -519.0
+offset_right = 3638.0
+offset_bottom = 5.0
+texture = ExtResource("3_cb8w2")
+expand_mode = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Trashcan" unique_id=340037480]
+position = Vector2(3588, -245)
+shape = SubResource("RectangleShape2D_46joo")
+
+[node name="Hidden1" type="StaticBody2D" parent="." unique_id=2054752504]
+
+[node name="Successpoint" type="Area2D" parent="." unique_id=1172318457 node_paths=PackedStringArray("game_over_label", "game_over_music")]
+position = Vector2(3109, 6)
+script = ExtResource("4_46joo")
+game_over_label = NodePath("../CanvasLayer/EndLabel")
+game_over_music = NodePath("../GameOverMusic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Successpoint" unique_id=1732892692]
+position = Vector2(338.75, -161.375)
+shape = SubResource("RectangleShape2D_n8nbn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=562048128]
+process_mode = 3
+
+[node name="EndLabel" type="Label" parent="CanvasLayer" unique_id=2095542487]
+process_mode = 3
+visible = false
+offset_left = 323.0
+offset_top = 197.0
+offset_right = 866.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1400000824]
+process_mode = 3
+offset_left = 407.0
+offset_top = 222.0
+offset_right = 769.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 80
+text = "START"
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="." unique_id=506610047]
+process_mode = 3
+stream = ExtResource("6_ckmo1")
+volume_db = 3.232
+autoplay = true

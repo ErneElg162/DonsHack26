@@ -50,3 +50,4 @@ Cling={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.4612537, 0.6382392, 0.609036, 1)
