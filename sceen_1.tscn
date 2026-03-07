@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bclsqvycllnl3"]
 
-[ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://background3-1.png" id="1_cb8w2"]
+[ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://Assets/background3-1.png" id="1_cb8w2"]
 [ext_resource type="Script" uid="uid://r126fj7160hn" path="res://sceen_1.gd" id="1_n8nbn"]
-[ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="2_hm3ih"]
-[ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Trashcan.png" id="3_cb8w2"]
+[ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="3_cb8w2"]
 [ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="4_46joo"]
 [ext_resource type="AudioStream" uid="uid://bhdrnobtigp7d" path="res://throwing trash sound.mp3" id="6_ckmo1"]
 
@@ -70,11 +69,6 @@ offset_bottom = -16.0
 texture = ExtResource("1_cb8w2")
 expand_mode = 1
 stretch_mode = 1
-
-[node name="RigidBody2D" parent="." unique_id=1940723546 instance=ExtResource("2_hm3ih")]
-position = Vector2(3472, -651)
-
-[node name="Camera2D" type="Camera2D" parent="RigidBody2D" unique_id=1611953558]
 
 [node name="Trashcan" type="StaticBody2D" parent="." unique_id=2032885324]
 
