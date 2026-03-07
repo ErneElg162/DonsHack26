@@ -32,27 +32,33 @@ polygon = PackedVector2Array(0, -1, -0.866, 0.5, 0.866, 0.5)
 
 [node name="ControlPoint1" type="Node2D" parent="." unique_id=1110976500]
 position = Vector2(0, -50)
-scale = Vector2(50.000008, 50.000008)
 
 [node name="ControlPoint2" type="Node2D" parent="." unique_id=1220825872]
 position = Vector2(-43.3, 25)
-scale = Vector2(50.000008, 50.000008)
 
 [node name="ControlPoint3" type="Node2D" parent="." unique_id=188864394]
 position = Vector2(43.3, 25)
-scale = Vector2(50.000008, 50.000008)
 
 [node name="Joint1" type="PinJoint2D" parent="." unique_id=640147899]
+process_mode = 4
+position = Vector2(0, -50)
 scale = Vector2(0.99999994, 0.99999994)
 node_a = NodePath("..")
+bias = 0.9
 
 [node name="Joint2" type="PinJoint2D" parent="." unique_id=147054300]
+process_mode = 4
+position = Vector2(-43.3, 25)
 scale = Vector2(0.99999994, 0.99999994)
 node_a = NodePath("..")
+bias = 0.9
 
 [node name="Joint3" type="PinJoint2D" parent="." unique_id=1189928599]
+process_mode = 4
+position = Vector2(43.3, 25)
 scale = Vector2(0.99999994, 0.99999994)
 node_a = NodePath("..")
+bias = 0.9
 
 [node name="CPs" type="Node2D" parent="." unique_id=1017971341]
 scale = Vector2(50, 50)
