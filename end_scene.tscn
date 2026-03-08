@@ -2,6 +2,30 @@
 
 [ext_resource type="Script" uid="uid://d3owxccmjsrio" path="res://back_button.gd" id="1_3wcc1"]
 [ext_resource type="Script" uid="uid://bv0ydju2g6hd5" path="res://end_scene.gd" id="1_jvrxn"]
+[ext_resource type="Texture2D" uid="uid://dtgovtu705qaj" path="res://Assets/game_cover.png" id="3_vitp6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vitp6"]
+bg_color = Color(0, 0, 0, 0.54901963)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taqub"]
+bg_color = Color(0, 0, 0, 0.73333335)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="EndScene" type="Node2D" unique_id=32272090 node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_jvrxn")
@@ -11,20 +35,28 @@ start_scene_path = "uid://decguwfqdmhmp"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440138066]
 process_mode = 3
 
-[node name="EndLabel" type="Label" parent="CanvasLayer" unique_id=749291191]
-process_mode = 3
-offset_left = 280.0
-offset_top = 124.0
-offset_right = 931.0
-offset_bottom = 289.0
-theme_override_font_sizes/font_size = 120
-text = "Game Over"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1616217924]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_vitp6")
 
-[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1295957700]
-offset_left = 432.0
-offset_top = 351.0
-offset_right = 795.0
-offset_bottom = 472.0
+[node name="EndLabel1" type="Label" parent="CanvasLayer" unique_id=729729853]
+offset_left = 202.0
+offset_top = 115.0
+offset_right = 946.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_vitp6")
+text = "GameOver"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1431864931]
+offset_left = 398.0
+offset_top = 383.0
+offset_right = 761.0
+offset_bottom = 504.0
 theme_override_font_sizes/font_size = 80
-text = "Back"
+theme_override_styles/normal = SubResource("StyleBoxFlat_taqub")
+text = "Return"
 script = ExtResource("1_3wcc1")

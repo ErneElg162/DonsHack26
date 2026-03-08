@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://xuujnwvbd007" path="res://start_scene.gd" id="1_mbe3m"]
 [ext_resource type="Texture2D" uid="uid://dtgovtu705qaj" path="res://Assets/game_cover.png" id="2_jfucu"]
-[ext_resource type="Script" uid="uid://d3owxccmjsrio" path="res://back_button.gd" id="2_kyjdd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq0ge"]
 bg_color = Color(0, 0, 0, 0.54901963)
@@ -27,10 +26,12 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="StartScene" type="Node2D" unique_id=1486878269 node_paths=PackedStringArray("start_button")]
+[node name="StartScene" type="Node2D" unique_id=1486878269 node_paths=PackedStringArray("start_button_easy", "start_button_hard")]
 script = ExtResource("1_mbe3m")
-start_button = NodePath("StartButtonEasy")
+start_button_easy = NodePath("StartButtonEasy")
+start_button_hard = NodePath("StartButtonHard")
 game_scene_path = "uid://bbd151ufbf7kp"
+game_scene_path_hard = "uid://byt4kd8c0ck8t"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=525365205]
 offset_right = 1152.0
@@ -39,13 +40,13 @@ texture = ExtResource("2_jfucu")
 
 [node name="Title" type="Label" parent="." unique_id=798679819]
 offset_left = 202.0
-offset_top = 115.0
-offset_right = 946.0
-offset_bottom = 296.0
+offset_top = 104.0
+offset_right = 953.0
+offset_bottom = 285.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/normal = SubResource("StyleBoxFlat_oq0ge")
-text = "BACK HOME"
+text = "UR TRASH"
 horizontal_alignment = 1
 
 [node name="StartButtonEasy" type="Button" parent="." unique_id=1745998900]
@@ -56,7 +57,6 @@ offset_bottom = 543.0
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_jfucu")
 text = "Easy"
-script = ExtResource("2_kyjdd")
 
 [node name="StartButtonHard" type="Button" parent="." unique_id=2091636190]
 offset_left = 641.0
@@ -66,4 +66,3 @@ offset_bottom = 539.0
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_jfucu")
 text = "Hard"
-script = ExtResource("2_kyjdd")

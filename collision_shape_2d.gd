@@ -1,4 +1,7 @@
-extends Area2D
+extends CollisionShape2D
+
+
+
 @export var game_over_label: Label
 @export var game_over_music: AudioStreamPlayer2D
 @export_file("*.tscn") var end_scene_path: String
@@ -10,10 +13,3 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body is RigidBody2D: 
 		trigger_game_end()
-
-func trigger_game_end():
-	if game_over_music:
-		print("Music played")
-		game_over_music.play()
-	await get_tree().create_timer(1.0).timeout # wait for a second
-	get_tree().call_deferred("change_scene_to_file", end_scene_path)
