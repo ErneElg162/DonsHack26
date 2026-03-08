@@ -98,7 +98,7 @@ position = Vector2(3929, 990.75)
 shape = SubResource("RectangleShape2D_ckmo1")
 
 [node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
-position = Vector2(3494, -682)
+position = Vector2(-3, -99)
 p1_anchor = NodePath("../P1_Anchor")
 p2_anchor = NodePath("../P2_Anchor")
 p3_anchor = NodePath("../P3_Anchor")

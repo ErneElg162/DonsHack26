@@ -32,6 +32,7 @@ shape = SubResource("RectangleShape2D_h0a2m")
 
 [node name="Successpoint" type="Area2D" parent="." unique_id=1694337744]
 script = ExtResource("2_uftls")
+win_scene = "uid://cy6lri5tfqxiw"
 
 [node name="Clear" type="CollisionShape2D" parent="Successpoint" unique_id=1754229366]
 position = Vector2(-8.5, 59.5)
