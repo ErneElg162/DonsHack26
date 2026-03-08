@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byt4kd8c0ck8t"]
+[gd_scene format=3 uid="uid://y6gmmmwbmors"]
 
 [ext_resource type="Script" uid="uid://dano84cc0cl37" path="res://sceen_2.gd" id="1_a3ntt"]
 [ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://Assets/background3-1.png" id="2_a3ntt"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="4_1u163"]
 [ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="5_5du8g"]
 [ext_resource type="AudioStream" uid="uid://bhdrnobtigp7d" path="res://throwing trash sound.mp3" id="6_uawtj"]
-[ext_resource type="Script" uid="uid://dk3regqvy4d40" path="res://edge_die.gd" id="7_ofnrf"]
+[ext_resource type="Script" path="res://edge_die.gd" id="7_ofnrf"]
 [ext_resource type="Texture2D" uid="uid://c8tv4kyjaxm7f" path="res://Assets/banana.png" id="8_a3ntt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuurp"]
@@ -45,6 +45,7 @@ scale_max = 0.01
 
 [node name="Sceen2" type="Node2D" unique_id=709806057]
 script = ExtResource("1_a3ntt")
+game_over_scene = "uid://co3nub2814w40"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2035044339]
 collision_layer = 3

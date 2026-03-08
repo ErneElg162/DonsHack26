@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://d1e6pb7ecwv02"]
+[gd_scene format=3 uid="uid://csgw6gfc17cn"]
 
-[ext_resource type="PackedScene" uid="uid://dx5dt6imfq1tg" path="res://MovingPlatform.tscn" id="1_ypb6v"]
+[ext_resource type="PackedScene" path="res://MovingPlatform.tscn" id="1_ypb6v"]
 [ext_resource type="Texture2D" uid="uid://bnvm2l5vcmfk1" path="res://icon.svg" id="2_haaxl"]
 
 [sub_resource type="Curve2D" id="Curve2D_ypb6v"]
@@ -30,4 +30,5 @@ texture = ExtResource("2_haaxl")
 
 [node name="Path2D2" parent="." unique_id=989108489 instance=ExtResource("1_ypb6v")]
 position = Vector2(-391, 224)
+scale = Vector2(1.0057646, 0.9943992)
 curve = SubResource("Curve2D_haaxl")

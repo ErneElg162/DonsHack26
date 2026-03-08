@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dtwc8d0pirvur"]
+
+[ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="1_wwu10"]
+[ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="2_uftls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86rc4"]
+size = Vector2(24.5, 493.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0a2m"]
+size = Vector2(24.5, 495.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e768e"]
+size = Vector2(229, 359)
+
+[node name="TrashBin" type="StaticBody2D" unique_id=2010954819]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1016836977]
+offset_left = -186.0
+offset_top = -262.0
+offset_right = 186.0
+offset_bottom = 262.0
+texture = ExtResource("1_wwu10")
+expand_mode = 1
+
+[node name="WallR" type="CollisionShape2D" parent="." unique_id=828074602]
+position = Vector2(127, 1)
+shape = SubResource("RectangleShape2D_86rc4")
+
+[node name="WallL" type="CollisionShape2D" parent="." unique_id=1451883410]
+position = Vector2(-142, 12)
+shape = SubResource("RectangleShape2D_h0a2m")
+
+[node name="Successpoint" type="Area2D" parent="." unique_id=1694337744]
+script = ExtResource("2_uftls")
+
+[node name="Clear" type="CollisionShape2D" parent="Successpoint" unique_id=1754229366]
+position = Vector2(-8.5, 59.5)
+shape = SubResource("RectangleShape2D_e768e")

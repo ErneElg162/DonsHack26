@@ -2,12 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://Assets/background3-1.png" id="1_cb8w2"]
 [ext_resource type="Script" uid="uid://r126fj7160hn" path="res://sceen_1.gd" id="1_n8nbn"]
-[ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="3_cb8w2"]
-[ext_resource type="PackedScene" uid="uid://b76llfh3b7wnh" path="res://ant.tscn" id="3_jbavp"]
-[ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="4_46joo"]
 [ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="6_2vvya"]
 [ext_resource type="AudioStream" uid="uid://bhdrnobtigp7d" path="res://throwing trash sound.mp3" id="6_ckmo1"]
-[ext_resource type="Script" uid="uid://dk3regqvy4d40" path="res://edge_die.gd" id="7_2vvya"]
+[ext_resource type="PackedScene" uid="uid://dtwc8d0pirvur" path="res://trash_bin.tscn" id="6_jbavp"]
+[ext_resource type="Script" path="res://edge_die.gd" id="7_2vvya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuurp"]
 size = Vector2(1704, 573)
@@ -18,26 +16,12 @@ size = Vector2(3287.5, 538)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm3ih"]
 size = Vector2(1082, 624)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb8w2"]
-size = Vector2(24.5, 493.625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_46joo"]
-size = Vector2(24.5, 495.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8nbn"]
-size = Vector2(229, 359)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckmo1"]
 size = Vector2(19222, 236.5)
 
 [node name="Sceen1" type="Node2D" unique_id=709806057]
 script = ExtResource("1_n8nbn")
-
-[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
-position = Vector2(-141, -102)
-p1_anchor = NodePath("../P1_Anchor")
-p2_anchor = NodePath("../P2_Anchor")
-p3_anchor = NodePath("../P3_Anchor")
+game_over_scene = "uid://co3nub2814w40"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2035044339]
 collision_layer = 3
@@ -81,35 +65,6 @@ texture = ExtResource("1_cb8w2")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Trashcan" type="StaticBody2D" parent="." unique_id=2032885324]
-position = Vector2(3601, -261)
-collision_layer = 3
-
-[node name="TextureRect" type="TextureRect" parent="Trashcan" unique_id=1534099604]
-offset_left = -186.0
-offset_top = -262.0
-offset_right = 186.0
-offset_bottom = 262.0
-texture = ExtResource("3_cb8w2")
-expand_mode = 1
-
-[node name="WallR" type="CollisionShape2D" parent="Trashcan" unique_id=398228661]
-position = Vector2(127, 1)
-shape = SubResource("RectangleShape2D_cb8w2")
-
-[node name="WallL" type="CollisionShape2D" parent="Trashcan" unique_id=340037480]
-position = Vector2(-142, 12)
-shape = SubResource("RectangleShape2D_46joo")
-
-[node name="Successpoint" type="Area2D" parent="Trashcan" unique_id=1172318457 node_paths=PackedStringArray("game_over_label", "game_over_music")]
-script = ExtResource("4_46joo")
-game_over_label = NodePath("../../CanvasLayer/EndLabel")
-game_over_music = NodePath("../../GameOverMusic")
-
-[node name="Clear" type="CollisionShape2D" parent="Trashcan/Successpoint" unique_id=1732892692]
-position = Vector2(-8.5, 59.5)
-shape = SubResource("RectangleShape2D_n8nbn")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=562048128]
 process_mode = 3
 
@@ -127,7 +82,6 @@ text = "Game Over"
 process_mode = 3
 stream = ExtResource("6_ckmo1")
 volume_db = 3.232
-autoplay = true
 
 [node name="P1_Anchor" type="StaticBody2D" parent="." unique_id=1474802561]
 
@@ -142,3 +96,13 @@ end_scene_path = "uid://co3nub2814w40"
 [node name="Edge Die" type="CollisionShape2D" parent="Edge" unique_id=1948530024]
 position = Vector2(3929, 990.75)
 shape = SubResource("RectangleShape2D_ckmo1")
+
+[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
+position = Vector2(3494, -682)
+p1_anchor = NodePath("../P1_Anchor")
+p2_anchor = NodePath("../P2_Anchor")
+p3_anchor = NodePath("../P3_Anchor")
+
+[node name="TrashBin" parent="." unique_id=2010954819 instance=ExtResource("6_jbavp")]
+position = Vector2(3524, -240)
+collision_layer = 3
