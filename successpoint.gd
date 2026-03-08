@@ -1,6 +1,7 @@
 extends Area2D
 @export var game_over_label: Label
 @export var game_over_music: AudioStreamPlayer2D
+@export_file("*.tscn") var end_scene_path: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,6 @@ func trigger_game_end():
 		print("Music played")
 		game_over_music.play()
 		
-	if game_over_label:
-		game_over_label.visible = true
+	get_tree().change_scene_to_file(end_scene_path)
 	get_tree().paused = true
 	print("Game stopped.")

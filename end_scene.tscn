@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://co3nub2814w40"]
+
+[ext_resource type="Script" uid="uid://d3owxccmjsrio" path="res://back_button.gd" id="1_3wcc1"]
+[ext_resource type="Script" uid="uid://bv0ydju2g6hd5" path="res://end_scene.gd" id="1_jvrxn"]
+
+[node name="EndScene" type="Node2D" unique_id=32272090 node_paths=PackedStringArray("back_button")]
+script = ExtResource("1_jvrxn")
+back_button = NodePath("CanvasLayer/BackButton")
+start_scene_path = "uid://decguwfqdmhmp"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440138066]
+process_mode = 3
+
+[node name="EndLabel" type="Label" parent="CanvasLayer" unique_id=749291191]
+process_mode = 3
+offset_left = 280.0
+offset_top = 124.0
+offset_right = 931.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 120
+text = "Game Over"
+
+[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1295957700]
+offset_left = 432.0
+offset_top = 351.0
+offset_right = 795.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 80
+text = "Back"
+script = ExtResource("1_3wcc1")
