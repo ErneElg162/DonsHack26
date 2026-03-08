@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dm6afv1fr48g0"]
+[gd_scene format=3 uid="uid://dx5dt6imfq1tg"]
 
-[ext_resource type="Script" path="res://moving_platform.gd" id="1_0ltmk"]
-[ext_resource type="PackedScene" uid="uid://b5heuxqiti2t6" path="res://Platform.tscn" id="2_3v42y"]
+[ext_resource type="Script" uid="uid://2wcp20305qmd" path="res://moving_platform.gd" id="1_0ltmk"]
+[ext_resource type="PackedScene" uid="uid://crbouallerteq" path="res://Platform.tscn" id="2_3v42y"]
 
 [sub_resource type="Curve2D" id="Curve2D_ff573"]
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b5heuxqiti2t6"]
+[gd_scene format=3 uid="uid://crbouallerteq"]
 
 [ext_resource type="Texture2D" uid="uid://badiq6gtl5jgo" path="res://Assets/background2.jpg" id="1_k63f6"]
 
@@ -7,7 +7,6 @@ size = Vector2(36.314346, 103)
 
 [node name="Platform" type="StaticBody2D" unique_id=1877720567]
 scale = Vector2(0.19749369, 0.20224966)
-collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616535462]
 scale = Vector2(36.520004, 5)

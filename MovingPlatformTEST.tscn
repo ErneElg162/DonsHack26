@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cg6bvbbnnte4f"]
+[gd_scene format=3 uid="uid://d1e6pb7ecwv02"]
 
-[ext_resource type="PackedScene" uid="uid://dm6afv1fr48g0" path="res://MovingPlatform.tscn" id="1_ypb6v"]
+[ext_resource type="PackedScene" uid="uid://dx5dt6imfq1tg" path="res://MovingPlatform.tscn" id="1_ypb6v"]
 [ext_resource type="Texture2D" uid="uid://bnvm2l5vcmfk1" path="res://icon.svg" id="2_haaxl"]
 
 [sub_resource type="Curve2D" id="Curve2D_ypb6v"]
