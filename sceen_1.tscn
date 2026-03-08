@@ -3,9 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://Assets/background3-1.png" id="1_cb8w2"]
 [ext_resource type="Script" uid="uid://r126fj7160hn" path="res://sceen_1.gd" id="1_n8nbn"]
 [ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="3_cb8w2"]
-[ext_resource type="Script" path="res://successpoint.gd" id="4_46joo"]
+[ext_resource type="PackedScene" uid="uid://b76llfh3b7wnh" path="res://ant.tscn" id="3_jbavp"]
+[ext_resource type="Script" uid="uid://b2qi3rhjpgod5" path="res://successpoint.gd" id="4_46joo"]
 [ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="6_2vvya"]
 [ext_resource type="AudioStream" uid="uid://bhdrnobtigp7d" path="res://throwing trash sound.mp3" id="6_ckmo1"]
+[ext_resource type="Script" uid="uid://dk3regqvy4d40" path="res://edge_die.gd" id="7_2vvya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuurp"]
 size = Vector2(1704, 573)
@@ -25,9 +27,11 @@ size = Vector2(24.5, 495.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8nbn"]
 size = Vector2(229, 359)
 
-[node name="Sceen1" type="Node2D" unique_id=709806057 node_paths=PackedStringArray("start_button")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckmo1"]
+size = Vector2(19222, 236.5)
+
+[node name="Sceen1" type="Node2D" unique_id=709806057]
 script = ExtResource("1_n8nbn")
-start_button = NodePath("CanvasLayer/StartButton")
 
 [node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
 position = Vector2(-141, -102)
@@ -119,15 +123,6 @@ offset_bottom = 334.0
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
 
-[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1400000824]
-process_mode = 3
-offset_left = 407.0
-offset_top = 222.0
-offset_right = 769.0
-offset_bottom = 390.0
-theme_override_font_sizes/font_size = 80
-text = "START"
-
 [node name="GameOverMusic" type="AudioStreamPlayer2D" parent="." unique_id=506610047]
 process_mode = 3
 stream = ExtResource("6_ckmo1")
@@ -139,3 +134,11 @@ autoplay = true
 [node name="P2_Anchor" type="StaticBody2D" parent="." unique_id=905293539]
 
 [node name="P3_Anchor" type="StaticBody2D" parent="." unique_id=1185140516]
+
+[node name="Edge" type="Area2D" parent="." unique_id=1462642197]
+script = ExtResource("7_2vvya")
+end_scene_path = "uid://co3nub2814w40"
+
+[node name="Edge Die" type="CollisionShape2D" parent="Edge" unique_id=1948530024]
+position = Vector2(3929, 990.75)
+shape = SubResource("RectangleShape2D_ckmo1")

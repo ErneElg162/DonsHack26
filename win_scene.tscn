@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cy6lri5tfqxiw"]
+
+[ext_resource type="Script" uid="uid://bv0ydju2g6hd5" path="res://end_scene.gd" id="1_2cral"]
+[ext_resource type="Texture2D" uid="uid://dtgovtu705qaj" path="res://Assets/game_cover.png" id="1_akwf7"]
+[ext_resource type="Script" uid="uid://d3owxccmjsrio" path="res://back_button.gd" id="2_2cral"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sel2p"]
+bg_color = Color(0, 0, 0, 0.54901963)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8qen"]
+bg_color = Color(0, 0, 0, 0.73333335)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="WinScene" type="Node2D" unique_id=1894799330 node_paths=PackedStringArray("back_button")]
+script = ExtResource("1_2cral")
+back_button = NodePath("CanvasLayer/BackButton")
+start_scene_path = "uid://decguwfqdmhmp"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437740493]
+process_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1506295294]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_akwf7")
+
+[node name="EndLabel1" type="Label" parent="CanvasLayer" unique_id=422798008]
+offset_left = 202.0
+offset_top = 115.0
+offset_right = 946.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_sel2p")
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1037777973]
+offset_left = 398.0
+offset_top = 383.0
+offset_right = 761.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8qen")
+text = "Return"
+script = ExtResource("2_2cral")
