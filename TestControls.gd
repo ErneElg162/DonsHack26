@@ -62,9 +62,6 @@ func force(player: Player, cc: bool):
 			imp *= -1
 		
 		rb.apply_impulse(imp, offset)
-		print_debug("IMP: ", imp)
-		print_debug(imp.angle())
-		print_debug("--------------")
 
 func overlap_clingable(player: Player):
 	if player.mask.get_overlapping_bodies().size() > 0:

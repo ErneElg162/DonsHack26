@@ -29,7 +29,7 @@ corner_radius_bottom_left = 10
 
 [node name="EndScene" type="Node2D" unique_id=32272090 node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_jvrxn")
-back_button = NodePath("CanvasLayer/BackButton")
+back_button = NodePath("CanvasLayer/TextureRect/BackButton")
 start_scene_path = "uid://decguwfqdmhmp"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440138066]
@@ -38,9 +38,11 @@ process_mode = 3
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1616217924]
 offset_right = 1152.0
 offset_bottom = 648.0
+scale = Vector2(3.5934134, 3.5934134)
 texture = ExtResource("3_vitp6")
 
-[node name="EndLabel1" type="Label" parent="CanvasLayer" unique_id=729729853]
+[node name="EndLabel1" type="Label" parent="CanvasLayer/TextureRect" unique_id=729729853]
+layout_mode = 0
 offset_left = 202.0
 offset_top = 115.0
 offset_right = 946.0
@@ -51,7 +53,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vitp6")
 text = "GameOver"
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="CanvasLayer" unique_id=1431864931]
+[node name="BackButton" type="Button" parent="CanvasLayer/TextureRect" unique_id=1431864931]
+layout_mode = 0
 offset_left = 398.0
 offset_top = 383.0
 offset_right = 761.0

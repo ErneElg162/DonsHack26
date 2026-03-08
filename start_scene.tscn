@@ -28,17 +28,19 @@ corner_radius_bottom_left = 10
 
 [node name="StartScene" type="Node2D" unique_id=1486878269 node_paths=PackedStringArray("start_button_easy", "start_button_hard")]
 script = ExtResource("1_mbe3m")
-start_button_easy = NodePath("StartButtonEasy")
-start_button_hard = NodePath("StartButtonHard")
+start_button_easy = NodePath("TextureRect/StartButtonEasy")
+start_button_hard = NodePath("TextureRect/StartButtonHard")
 game_scene_path = "uid://bbd151ufbf7kp"
 game_scene_path_hard = "uid://y6gmmmwbmors"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=525365205]
 offset_right = 1152.0
 offset_bottom = 648.0
+scale = Vector2(3.5934134, 3.5934134)
 texture = ExtResource("2_jfucu")
 
-[node name="Title" type="Label" parent="." unique_id=798679819]
+[node name="Title" type="Label" parent="TextureRect" unique_id=798679819]
+layout_mode = 0
 offset_left = 202.0
 offset_top = 104.0
 offset_right = 953.0
@@ -49,7 +51,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_oq0ge")
 text = "UR TRASH"
 horizontal_alignment = 1
 
-[node name="StartButtonEasy" type="Button" parent="." unique_id=1745998900]
+[node name="StartButtonEasy" type="Button" parent="TextureRect" unique_id=1745998900]
+layout_mode = 0
 offset_left = 127.0
 offset_top = 422.0
 offset_right = 490.0
@@ -58,7 +61,8 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_jfucu")
 text = "Easy"
 
-[node name="StartButtonHard" type="Button" parent="." unique_id=2091636190]
+[node name="StartButtonHard" type="Button" parent="TextureRect" unique_id=2091636190]
+layout_mode = 0
 offset_left = 641.0
 offset_top = 418.0
 offset_right = 1004.0

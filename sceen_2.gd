@@ -3,7 +3,7 @@ extends Node2D
 
 var player: RigidBody2D
 var start: Vector2
-var wind_speed = Vector2(-1000, 0)
+var wind_speed = Vector2(-400, 0)
 var death_plane = 250
 
 # Called when the node enters the scene tree for the first time.
