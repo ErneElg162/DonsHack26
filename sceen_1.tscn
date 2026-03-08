@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbd151ufbf7kp"]
 
 [ext_resource type="Texture2D" uid="uid://dfbs2h7ybs031" path="res://Assets/background3-1.png" id="1_cb8w2"]
-[ext_resource type="Script" path="res://sceen_1.gd" id="1_n8nbn"]
+[ext_resource type="Script" uid="uid://r126fj7160hn" path="res://sceen_1.gd" id="1_n8nbn"]
 [ext_resource type="Texture2D" uid="uid://c1uf825lmke40" path="res://Assets/Trashcan.png" id="3_cb8w2"]
 [ext_resource type="Script" path="res://successpoint.gd" id="4_46joo"]
 [ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="6_2vvya"]
@@ -23,11 +23,17 @@ size = Vector2(24.5, 493.625)
 size = Vector2(24.5, 495.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8nbn"]
-size = Vector2(266.5, 295.25)
+size = Vector2(229, 359)
 
 [node name="Sceen1" type="Node2D" unique_id=709806057 node_paths=PackedStringArray("start_button")]
 script = ExtResource("1_n8nbn")
 start_button = NodePath("CanvasLayer/StartButton")
+
+[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
+position = Vector2(-141, -102)
+p1_anchor = NodePath("../P1_Anchor")
+p2_anchor = NodePath("../P2_Anchor")
+p3_anchor = NodePath("../P3_Anchor")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2035044339]
 collision_layer = 3
@@ -36,69 +42,68 @@ collision_layer = 3
 position = Vector2(-68, 276.5)
 shape = SubResource("RectangleShape2D_nuurp")
 
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D/CollisionShape2D" unique_id=1913792183]
+offset_left = -853.0
+offset_top = -648.5
+offset_right = 851.0
+offset_bottom = 291.5
+texture = ExtResource("1_cb8w2")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1638530434]
-position = Vector2(2517.75, 253)
+position = Vector2(2618.75, 253)
 shape = SubResource("RectangleShape2D_5t6hc")
 
+[node name="TextureRect2" type="TextureRect" parent="StaticBody2D/CollisionShape2D2" unique_id=1173480985]
+offset_left = -1639.75
+offset_top = -626.0
+offset_right = 1649.25
+offset_bottom = 310.0
+texture = ExtResource("1_cb8w2")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1776222860]
-position = Vector2(1868, -330)
+position = Vector2(1969, -330)
 shape = SubResource("RectangleShape2D_hm3ih")
 
-[node name="TextureRect" type="TextureRect" parent="StaticBody2D" unique_id=1913792183]
-offset_left = -921.0
-offset_top = -372.0
-offset_right = 783.0
-offset_bottom = 568.0
-texture = ExtResource("1_cb8w2")
-expand_mode = 1
-stretch_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="StaticBody2D" unique_id=1173480985]
-offset_left = 878.0
-offset_top = -373.0
-offset_right = 4167.0
-offset_bottom = 563.0
-texture = ExtResource("1_cb8w2")
-expand_mode = 1
-stretch_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="StaticBody2D" unique_id=1207599260]
-offset_left = 1324.0
-offset_top = -1007.0
-offset_right = 2412.0
-offset_bottom = -16.0
+[node name="TextureRect3" type="TextureRect" parent="StaticBody2D/CollisionShape2D4" unique_id=1207599260]
+offset_left = -544.0
+offset_top = -677.0
+offset_right = 544.0
+offset_bottom = 314.0
 texture = ExtResource("1_cb8w2")
 expand_mode = 1
 stretch_mode = 1
 
 [node name="Trashcan" type="StaticBody2D" parent="." unique_id=2032885324]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trashcan" unique_id=398228661]
-position = Vector2(3309, -251)
-shape = SubResource("RectangleShape2D_cb8w2")
+position = Vector2(3601, -261)
+collision_layer = 3
 
 [node name="TextureRect" type="TextureRect" parent="Trashcan" unique_id=1534099604]
-offset_left = 3266.0
-offset_top = -519.0
-offset_right = 3638.0
-offset_bottom = 5.0
+offset_left = -186.0
+offset_top = -262.0
+offset_right = 186.0
+offset_bottom = 262.0
 texture = ExtResource("3_cb8w2")
 expand_mode = 1
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Trashcan" unique_id=340037480]
-position = Vector2(3588, -245)
+[node name="WallR" type="CollisionShape2D" parent="Trashcan" unique_id=398228661]
+position = Vector2(127, 1)
+shape = SubResource("RectangleShape2D_cb8w2")
+
+[node name="WallL" type="CollisionShape2D" parent="Trashcan" unique_id=340037480]
+position = Vector2(-142, 12)
 shape = SubResource("RectangleShape2D_46joo")
 
-[node name="Hidden1" type="StaticBody2D" parent="." unique_id=2054752504]
-
-[node name="Successpoint" type="Area2D" parent="." unique_id=1172318457 node_paths=PackedStringArray("game_over_label", "game_over_music")]
-position = Vector2(3109, 6)
+[node name="Successpoint" type="Area2D" parent="Trashcan" unique_id=1172318457 node_paths=PackedStringArray("game_over_label", "game_over_music")]
 script = ExtResource("4_46joo")
-game_over_label = NodePath("../CanvasLayer/EndLabel")
-game_over_music = NodePath("../GameOverMusic")
+game_over_label = NodePath("../../CanvasLayer/EndLabel")
+game_over_music = NodePath("../../GameOverMusic")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Successpoint" unique_id=1732892692]
-position = Vector2(338.75, -161.375)
+[node name="Clear" type="CollisionShape2D" parent="Trashcan/Successpoint" unique_id=1732892692]
+position = Vector2(-8.5, 59.5)
 shape = SubResource("RectangleShape2D_n8nbn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=562048128]
@@ -128,12 +133,6 @@ process_mode = 3
 stream = ExtResource("6_ckmo1")
 volume_db = 3.232
 autoplay = true
-
-[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
-position = Vector2(-141, -102)
-p1_anchor = NodePath("../P1_Anchor")
-p2_anchor = NodePath("../P2_Anchor")
-p3_anchor = NodePath("../P3_Anchor")
 
 [node name="P1_Anchor" type="StaticBody2D" parent="." unique_id=1474802561]
 
