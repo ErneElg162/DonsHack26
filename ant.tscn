@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b76llfh3b7wnh"]
+
+[ext_resource type="Script" uid="uid://bcy8c6suw5kyc" path="res://ant.gd" id="1_5tacl"]
+[ext_resource type="Texture2D" uid="uid://bvcmhgua06l3p" path="res://Assets/Ant.png" id="1_oav7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oav7h"]
+size = Vector2(157, 99)
+
+[node name="Ant" type="Node2D" unique_id=79212453]
+
+[node name="Ant" type="CharacterBody2D" parent="." unique_id=1832456152]
+script = ExtResource("1_5tacl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ant" unique_id=1386300817]
+position = Vector2(2.5000343, -45.750023)
+scale = Vector2(0.26374993, 0.27312496)
+texture = ExtResource("1_oav7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ant" unique_id=826870302]
+position = Vector2(13.5, -43.5)
+shape = SubResource("RectangleShape2D_oav7h")
