@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cg6bvbbnnte4f"]
+
+[ext_resource type="PackedScene" uid="uid://dm6afv1fr48g0" path="res://MovingPlatform.tscn" id="1_ypb6v"]
+[ext_resource type="Texture2D" uid="uid://bnvm2l5vcmfk1" path="res://icon.svg" id="2_haaxl"]
+
+[sub_resource type="Curve2D" id="Curve2D_ypb6v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -241, -233, 0, 0, 0, 0, 22, -235)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_haaxl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 876, -12)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D" unique_id=2054675808]
+
+[node name="Path2D" parent="." unique_id=402703570 instance=ExtResource("1_ypb6v")]
+position = Vector2(102, 22)
+curve = SubResource("Curve2D_ypb6v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1622850620]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1725188533]
+position = Vector2(-0.9999981, -125.000015)
+scale = Vector2(0.17258969, 0.2866345)
+texture = ExtResource("2_haaxl")
+
+[node name="Path2D2" parent="." unique_id=989108489 instance=ExtResource("1_ypb6v")]
+position = Vector2(-391, 224)
+curve = SubResource("Curve2D_haaxl")

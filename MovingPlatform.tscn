@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dm6afv1fr48g0"]
+
+[ext_resource type="Script" path="res://moving_platform.gd" id="1_0ltmk"]
+[ext_resource type="PackedScene" uid="uid://b5heuxqiti2t6" path="res://Platform.tscn" id="2_3v42y"]
+
+[sub_resource type="Curve2D" id="Curve2D_ff573"]
+
+[node name="Path2D" type="Path2D" unique_id=402703570]
+curve = SubResource("Curve2D_ff573")
+script = ExtResource("1_0ltmk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=123991183]
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="Platform" parent="PathFollow2D" unique_id=1877720567 instance=ExtResource("2_3v42y")]
