@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://odrfmgcftwqi"
 
+[display]
+
+window/size/mode=2
+
 [input]
 
 P1_CC={

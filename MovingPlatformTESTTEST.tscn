@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bc4w1fcxm0eb2"]
+
+[ext_resource type="PackedScene" uid="uid://dx6vgw3mgemhc" path="res://CharacterTestTest.tscn" id="1_tiimw"]
+[ext_resource type="PackedScene" uid="uid://dx5dt6imfq1tg" path="res://MovingPlatform.tscn" id="2_ri67c"]
+
+[sub_resource type="Curve2D" id="Curve2D_otd6g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 518.7307, -122.937256)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D" unique_id=1106935514]
+
+[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("1_tiimw")]
+position = Vector2(1974, 1439)
+p1_anchor = NodePath("../P1_Anchor")
+p2_anchor = NodePath("../P2_Anchor")
+p3_anchor = NodePath("../P3_Anchor")
+
+[node name="Path2D" parent="." unique_id=402703570 instance=ExtResource("2_ri67c")]
+position = Vector2(1986, 1601)
+scale = Vector2(2.5504568, 0.7564839)
+curve = SubResource("Curve2D_otd6g")
+speed = 30.0
+
+[node name="P1_Anchor" type="StaticBody2D" parent="." unique_id=853436573]
+
+[node name="P2_Anchor" type="StaticBody2D" parent="." unique_id=1683237322]
+
+[node name="P3_Anchor" type="StaticBody2D" parent="." unique_id=469225857]

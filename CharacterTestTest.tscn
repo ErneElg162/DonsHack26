@@ -109,3 +109,5 @@ node_a = NodePath("..")
 bias = 0.9
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=286416348]
+scale = Vector2(9.457782, -113.97884)
+zoom = Vector2(2, 2)

@@ -29,12 +29,6 @@ size = Vector2(229, 359)
 script = ExtResource("1_n8nbn")
 start_button = NodePath("CanvasLayer/StartButton")
 
-[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
-position = Vector2(-141, -102)
-p1_anchor = NodePath("../P1_Anchor")
-p2_anchor = NodePath("../P2_Anchor")
-p3_anchor = NodePath("../P3_Anchor")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2035044339]
 collision_layer = 3
 
@@ -139,3 +133,9 @@ autoplay = true
 [node name="P2_Anchor" type="StaticBody2D" parent="." unique_id=905293539]
 
 [node name="P3_Anchor" type="StaticBody2D" parent="." unique_id=1185140516]
+
+[node name="Character" parent="." unique_id=1940723546 node_paths=PackedStringArray("p1_anchor", "p2_anchor", "p3_anchor") instance=ExtResource("6_2vvya")]
+position = Vector2(-141, -102)
+p1_anchor = NodePath("../P1_Anchor")
+p2_anchor = NodePath("../P2_Anchor")
+p3_anchor = NodePath("../P3_Anchor")
