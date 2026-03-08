@@ -3,7 +3,8 @@ extends Node2D
 
 var rb: RigidBody2D
 var null_path: NodePath = NodePath("")
-var impulse = 300
+var impulse = 450
+var max_speed = 100
 
 @export var p1_anchor: StaticBody2D
 @export var p2_anchor: StaticBody2D
@@ -49,13 +50,21 @@ func uncling(player: Player):
 
 
 func force(player: Player, cc: bool):
-	if !player.clinging:
-		var imp = impulse * player.cp.get_relative_transform_to_parent(player.cp.get_parent()).x.normalized()
+	if !player.clinging and (p1.can_cling or p2.can_cling or p3.can_cling or p1.clinging or p2.clinging or p3.clinging):
+		#var imp = impulse * player.cp.get_relative_transform_to_parent(player.cp.get_parent()).x.normalized()
 		
-		if !cc:
+		var imp = Vector2(-impulse, 0).rotated(player.cp.global_rotation)
+		#imp.y *= -1
+		#imp.rotated(player.cp.rotation)
+		var offset = Vector2(player.cp.global_position - rb.global_position)
+		
+		if cc:
 			imp *= -1
 		
-		rb.apply_impulse(imp, player.cp.position)
+		rb.apply_impulse(imp, offset)
+		print_debug("IMP: ", imp)
+		print_debug(imp.angle())
+		print_debug("--------------")
 
 func overlap_clingable(player: Player):
 	if player.mask.get_overlapping_bodies().size() > 0:
@@ -65,7 +74,7 @@ func overlap_clingable(player: Player):
 		player.can_cling = false
 
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	#P1
 	if Input.is_action_just_pressed("P1_CC"):
 		force(p1, true)
@@ -73,10 +82,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("P1_C"):
 		force(p1, false)
 	
-	if Input.is_action_just_pressed("P1_S"):
+	if Input.is_action_pressed("P1_S"):
 		cling(p1)
-		
-	if Input.is_action_just_released("P1_S"):
+	
+	else:
 		uncling(p1)
 		
 	#P2
@@ -86,10 +95,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("P2_C"):
 		force(p2, false)
 	
-	if Input.is_action_just_pressed("P2_S"):
+	if Input.is_action_pressed("P2_S"):
 		cling(p2)
-		
-	if Input.is_action_just_released("P2_S"):
+	
+	else:
 		uncling(p2)
 		
 	#P3
@@ -99,18 +108,18 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("P3_C"):
 		force(p3, false)
 	
-	if Input.is_action_just_pressed("P3_S"):
+	if Input.is_action_pressed("P3_S"):
 		cling(p3)
-		
-	if Input.is_action_just_released("P3_S"):
+	
+	else:
 		uncling(p3)
 		
 
+	#rb.linear_velocity.limit_length(max_speed)
+
 	#DEBUG
 	if Input.is_action_just_pressed("DEBUG"):
-		print_debug("P1: ", p1.can_cling)
-		print_debug("P2: ", p2.can_cling)
-		print_debug("P3: ", p3.can_cling)
+		print_debug(rb.rotation)
 	
 	#Set can_cling
 	overlap_clingable(p1)
